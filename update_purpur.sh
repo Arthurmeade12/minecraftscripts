@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-SOURCE=${SOURCE:='/srv/minecraft/bin/config.sh'}
+SOURCE=${SOURCE:="$(dirname "${0}")/config.sh"}
 NOHASHUPDATE=${NOHASHUPDATE:='false'} # If true, will download every time if there's an update or not.
 INTOUPDATE=${INTOUPDATE:='false'} # If true, will download updates into the 'update' folder.
 . "${SOURCE}"
-export GH_TOKEN='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'
+export GH_TOKEN="$(cat "${MC_DIR}"/gh_token)"
 out(){
   if [[ -t 1 ]]
   then
@@ -71,7 +71,9 @@ githubeval(){
   local NAME="${1#*/}"
   local JQCOMMAND=".[].assets[] | select(startswith(\"${2%'*.jar'}\") | .browser_download_url)"
   intoupdate
-  if curl -JLOf# --clobber "$(gh api --header 'Accept: application/vnd.github+json' --method GET "/repos/${REPO}/releases" -F per_page=1 | jq -r '.[].assets[].browser_download_url')"
+  if curl -JLOf# --clobber \
+    "$(gh api --header 'Accept: application/vnd.github+json' --method GET "/repos/${REPO}/releases" -F per_page=1 |\
+        jq -r '.[].assets[].browser_download_url')"
   then
     out "Successfully downloaded latest version of ${1}!"
   else
@@ -89,12 +91,14 @@ geysereval(){
 	fi
 	local APIURL="https://download.geysermc.org/v2/projects/${1}/versions/latest/builds/latest"
 	local NAME="${1^}"
-	if [[ "$(curl --silent -L "${APIURL}" | jq -r .downloads.spigot.sha256)" = "$(sha256sum "${FILE}" | cut -d " " -f 1 )" ]]
+	if [[ "$(curl --silent -L "${APIURL}" | jq -r .downloads.spigot.sha256)" = \
+        "$(sha256sum "${FILE}" | cut -d " " -f 1 )" ]]
 	then
 		out "${NAME} is up to date!"
 	else
-		curl -#L -o "$(curl --silent -L "${APIURL}" | jq -r .downloads.spigot.name)" "${APIURL}"/downloads/spigot
-		out "Updated ${NAME}!"
+		curl -#L -o "$(curl --silent -L "${APIURL}" |\
+            jq -r .downloads.spigot.name)" "${APIURL}"/downloads/spigot
+		out "Updated ${NAME}"
 	fi
 	intoupdate
 }
@@ -107,6 +111,7 @@ mreval(){
       "purpur"
   ],
   "game_versions": [
+    "1.20.1",
     "1.20",
     "1.19.4",
     "1.19.3",
@@ -128,7 +133,8 @@ DATA
     fi
     local APIURL="https://api.modrinth.com/v2/version_file/${3}/update" # Uses sha1sum of a version of ${1}
     local JQCOMMAND=".files[] | select(.filename | startswith(\"${2%'*.jar'}\"))"
-    if [[ "$(mrdown "${APIURL}" | jq -r "${JQCOMMAND} | .hashes.sha1")" = "$(sha1sum "${FILE}" | head -c 40)" ]]
+    if [[ "$(mrdown "${APIURL}" | jq -r "${JQCOMMAND} | .hashes.sha1")" = \
+        "$(sha1sum "${FILE}" | head -c 40)" ]]
     then
         out "${1} is up to date!"
     else
@@ -143,7 +149,7 @@ DATA
    intoupdate
 }
 
-if ! wget -q --spider https://google.com/
+if ! nc -zw1 google.com 443 &>/dev/null
 then
     abort "No internet connection."
     exit 3
@@ -168,12 +174,14 @@ else
     PURPUROLDSUM="$(md5sum - < "${PURPURFILE}" | tr -d '  ' | tr -d '-')"
     if [[ "${PURPUROLDSUM}" = "${PURPURREMOTESUM}" ]]
     then
-        out 'Updated Purpur!'
+        out 'Updated Purpur'
     else
         badfile "${1}"
     fi
 fi
-pushd "${MC_DIR}"/plugins || (abort "${MC_DIR}/plugins does not exist." && exit 1)
+[[ ! -d "${MC_DIR}"/plugins ]] && \
+	mkdir -p "${MC_DIR}"/plugins
+pushd "${MC_DIR}"/plugins
 #shellcheck disable=SC2164
 githubeval 'zeshan321/ActionHealth' 'ActionHealth-*.jar'
 mreval 'Chunky' 'Chunky-*.jar' 'd57bb3ab4277aa61501aba80a2de5d111bed7f26'

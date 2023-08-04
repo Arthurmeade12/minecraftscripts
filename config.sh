@@ -38,7 +38,7 @@ abort(){
         echo -e "$* \nAborting ..."
     fi
 }
-export MC_DIR=/srv/minecraft/purpur
+export MC_DIR=.
 export MC_CONFIG="${MC_DIR}"/config
 export TMUX_SESSION='CENTER'
 export MAXJAVA=18
