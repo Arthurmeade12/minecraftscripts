@@ -5,38 +5,43 @@ BOLD="$(tput bold)"
 RESET="$(tput sgr0)"
 WHITE="$(tput setaf 15)"
 out(){
-        if [[ -t 1 ]]
-        then
-                for ARG in "$@"; do
-                        echo -e "$(tput setaf 4)${BOLD}==>${RESET} $(tput setaf 15)${ARG} ${RESET}"
-                done
+    if [[ -t 1 ]]
+    then
+        for ARG in "${@}"; do
+            echo -e "$(tput setaf 4)${BOLD}==>${RESET} $(tput setaf 15)${ARG} ${RESET}"
+        done
     else
-        echo "$@"
-        fi
+        echo "${@}"
+    fi
 }
 warn(){
-        local -r YELLOW="$(tput setaf 3)"
-        if [[ -t 1 ]]
-        then
-                for ARG in "$@"; do
-                        echo -e "${YELLOW}${BOLD}==>${RESET} ${YELLOW}WARNING: ${WHITE}${ARG} ${RESET}"
-                done
+    local -r YELLOW="$(tput setaf 3)"
+    if [[ -t 1 ]]
+    then
+        for ARG in "$@"; do
+            echo -e "${YELLOW}${BOLD}==>${RESET} ${YELLOW}WARNING: ${WHITE}${ARG} ${RESET}"
+        done
     else
         echo "$@"
-        fi
+    fi
 }
 abort(){
-        if [[ -t 1 ]]
-        then
+    if [[ -t 1 ]]
+    then
         local -r RED="$(tput setaf 1)"
-        for ARG in "$@"
+        for ARG in "${@}"
         do
             echo -e "$(tput setaf 5)${BOLD}==> ${RED}${ARG} ${RESET}"
         done
         echo "${RED}Aborting ... ${RESET}"
     else
-        echo -e "$* \nAborting ..."
+        echo -e "${*} \nAborting ..."
     fi
+}
+pushd_noerror(){
+    [[ ! -d "${1}" ]] && \
+        mkdir -p "${1}"
+    pushd "${1}"
 }
 export MC_DIR=.
 export MC_CONFIG="${MC_DIR}"/config
@@ -51,5 +56,4 @@ export AIKAR='-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 
 export ZGC='-XX:+IgnoreUnrecognizedVMOptions -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:-OmitStackTraceInFastThrow -XX:+ShowCodeDetailsInExceptionMessages -XX:+DisableExplicitGC -XX:-UseParallelGC -XX:+PerfDisableSharedMem -XX:+UseZGC -XX:-ZUncommit -XX:ZUncommitDelay=300 -XX:ZCollectionInterval=5 -XX:ZAllocationSpikeTolerance=2.0 -XX:+AlwaysPreTouch -XX:+UseTransparentHugePages -XX:LargePageSizeInBytes=2M -XX:+UseLargePages -XX:+ParallelRefProcEnabled'
 export BRUCETHEMOOSE='-XX:+UseTransparentHugePages -XX:+UseZGC -XX:AllocatePrefetchStyle=1 -XX:-ZProactive -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+AlwaysActAsServerClassMachine -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+UseNUMA -XX:NmethodSweepActivity=1 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NonProfiledCodeHeapSize=194M -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:+UseVectorCmov -XX:+PerfDisableSharedMem -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:ThreadPriorityPolicy=1 -XX:AllocatePrefetchStyle=3'
 export JAVAOPTS="-Xmx8192M -Xms8192M ${BRUCETHEMOOSE} --add-modules=jdk.incubator.vector -jar"
-export TMUX_ARGS=""
 # Done.

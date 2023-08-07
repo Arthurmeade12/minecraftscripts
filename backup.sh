@@ -1,6 +1,6 @@
 #!/bin/bash
 [[ "$(whoami)" != 'minecraft' ]] && echo 'You are not "minecraft". Aborting ...' && exit 1
-. /srv/minecraft/bin/config.sh
+. $(dirname "${0}")/config.sh
 grep -i universe <<< ${OPTS}
 WORLDS=('creative2' 'creative2_nether' 'survivalx' 'march')
 pushd "${MC_DIR}"/universe
