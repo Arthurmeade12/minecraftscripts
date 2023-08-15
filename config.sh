@@ -43,12 +43,12 @@ pushd_noerror(){
         mkdir -p "${1}"
     pushd "${1}"
 }
-export MC_DIR=.
+export MC_DIR="$(dirname "${0}")"
 export MC_CONFIG="${MC_DIR}"/config
 export TMUX_SESSION='CENTER'
 export MAXJAVA=18
 export MINJAVA=17
-export MINECRAFTVERSION=1.20 # Affects updating. 
+export MINECRAFTVERSION=1.20.1 # Affects updating. 
 export MCRCON_PASS=CfBwZG3XA
 export MCRCON_PORT=30001
 export OPTS="--nogui --log-strip-color -b ${MC_CONFIG}/bukkit.yml -C ${MC_CONFIG}/commands.yml -S ${MC_CONFIG}/spigot.yml --paper-dir ${MC_CONFIG}/paper/ --purpur ${MC_CONFIG}/purpur.yml  -W ${MC_DIR}/universe3 -c ${MC_CONFIG}/server.properties -d yyyy.MM.dd at HH:mm:ss -s 40  --server-name Arthurs_Server"
