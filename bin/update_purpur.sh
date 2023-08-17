@@ -3,7 +3,7 @@
 #shellcheck shell=bash
 #shellcheck enable=require-variable-braces,require-double-brackets
 set -u
-SOURCE=${SOURCE:="$(dirname "${0}")/config.sh"}
+SOURCE=${SOURCE:="$(dirname "${0}")/source.sh"}
 NOHASHUPDATE=${NOHASHUPDATE:='false'} # If true, will download every time if there's an update or not.
 INTOUPDATE=${INTOUPDATE:='true'} # If true, will download updates into the 'update' folder.
 #shellcheck source-path=SCRIPTDIR

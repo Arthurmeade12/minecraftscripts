@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -Bboum pipefail
-source "$(dirname "${0}")"/config.sh
+source "$(dirname "${0}")"/source.sh
 export TMUX=('tmux' '-S' "/tmp/tmux-$(id -u)/default")
 help(){
     echo "Usage: ${0} <start|headless_start|sleepstart|stop|restart|attach|help>"
@@ -46,14 +46,14 @@ case "${1}" in
     else
 	   export KILLW='false'
     fi
-    if already_running 
+    if already_running
     then
 	   out "Server is already running."
     else
 	   ${TMUX[*]} neww -dPn 'Minecraft' -c "${MC_DIR}" -t "${TMUX_SESSION}" "${EXEC[*]}"
 	   [[ "${KILLW}" = 'true' ]] && \
             ${TMUX[*]} killw -t "${TMUX_SESSION}":'Trash'
-        out "Started the Minecraft Server!"    
+        out "Started the Minecraft Server!"
     fi
     ;;
 'stop')
