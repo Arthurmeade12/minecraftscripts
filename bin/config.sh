@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # config.sh
 # Sourced by Minecraft scripts.
-MC_DIR="$(dirname "$(dirname "$(readlink "${0}")")")" # Evaluates to the parent dir of this script's dir.
+MC_DIR="$(dirname "$(dirname "$(readlink -f "${0}")")")" # Evaluates to the parent dir of this script's dir.
 MC_CONFIG="${MC_DIR}"/config # Folder for config.
 TMUX_SESSION='CENTER' # Name of tmux session.
 JAVAVERSION=17 # Which version of Java to look for.
