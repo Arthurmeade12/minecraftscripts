@@ -1,0 +1,151 @@
+[16:34:51] [ServerMain/INFO]: Could not find existing server.properties. Creating with default values...
+[16:34:51] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[16:34:51] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
+[16:34:51] [ServerMain/INFO]: Loaded 7 recipes
+[16:34:52] [Server thread/INFO]: Starting minecraft server version 1.20.1
+[16:34:52] [Server thread/INFO]: Loading properties
+[16:34:52] [Server thread/INFO]: This server is running Purpur version git-Purpur-2044 (MC: 1.20.1) (Implementing API version 1.20.1-R0.1-SNAPSHOT) (Git: 8ef1580 on HEAD)
+[16:34:52] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[16:34:52] [Server thread/INFO]: Using 4 threads for Netty based IO
+[16:34:52] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
+[16:34:53] [Server thread/INFO]: [Pufferfish] Max SIMD vector size on this system is 512 bits (int)
+[16:34:53] [Server thread/INFO]: [Pufferfish] Max SIMD vector size on this system is 512 bits (float)
+[16:34:53] [Server thread/INFO]: [Pufferfish] SIMD operations detected as functional. Will replace some operations with faster versions.
+[16:34:53] [Server thread/INFO]: Default game type: SURVIVAL
+[16:34:53] [Server thread/INFO]: Generating keypair
+[16:34:53] [Server thread/INFO]: Starting Minecraft server on *:25565
+[16:34:53] [Server thread/INFO]: Using epoll channel type
+[16:34:53] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[16:34:53] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+[16:34:54] [Server thread/INFO]: [libs.org.xnio] XNIO version 3.8.8.Final
+[16:34:54] [Server thread/INFO]: [libs.org.xnio.nio] XNIO NIO Implementation Version 3.8.8.Final
+[16:34:54] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.2.15+6463-5ca4dff
+[16:34:54] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@2e9611a]
+[16:34:54] [Server thread/INFO]: [floodgate] Loading server plugin floodgate v2.2.2-SNAPSHOT (b69-492be77)
+[16:34:55] [Server thread/INFO]: [floodgate] Took 379ms to boot Floodgate
+[16:34:55] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.4.102
+[16:34:55] [Server thread/INFO]: [spark] Loading server plugin spark v1.10.47
+[16:34:55] [Server thread/INFO]: [Pl3xMap] Loading server plugin Pl3xMap v1.20.1-469
+[16:34:55] [Server thread/INFO]: [CraftBook] Loading server plugin CraftBook v3.10.9;4793-1ce0146
+[16:34:55] [Server thread/INFO]: [CoreProtect] Loading server plugin CoreProtect v22.0
+[16:34:55] [Server thread/INFO]: [Geyser-Spigot] Loading server plugin Geyser-Spigot v2.2.0-SNAPSHOT
+[16:34:55] [Server thread/INFO]: [Geyser-Spigot] Loading extensions...
+[16:34:55] [Server thread/INFO]: [Geyser-Spigot] Loaded 0 extension(s)
+[16:34:55] [Server thread/INFO]: [Essentials] Loading server plugin Essentials v2.20.1
+[16:34:55] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[16:34:55] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.2.15+6463-5ca4dff
+[16:34:55] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[16:34:55] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[16:34:55] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R1.PaperweightAdapter as the Bukkit adapter
+[16:34:56] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.4.102
+[16:34:57] [Server thread/INFO]:         __    
+[16:34:57] [Server thread/INFO]:   |    |__)   LuckPerms v5.4.102
+[16:34:57] [Server thread/INFO]:   |___ |      Running on Bukkit - Purpur
+[16:34:57] [Server thread/INFO]: 
+[16:34:57] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[16:34:57] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[16:34:57] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[16:34:57] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[16:34:58] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 1095ms)
+[16:34:58] [Server thread/INFO]: Preparing level "world"
+[16:35:06] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[16:35:06] [Server thread/INFO]: Time elapsed: 124 ms
+[16:35:06] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[16:35:06] [Server thread/INFO]: Time elapsed: 72 ms
+[16:35:06] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[16:35:06] [Server thread/INFO]: Time elapsed: 105 ms
+[16:35:06] [Server thread/INFO]: [floodgate] Enabling floodgate v2.2.2-SNAPSHOT (b69-492be77)
+[16:35:06] [Server thread/INFO]: [spark] Enabling spark v1.10.47
+[16:35:06] [Server thread/INFO]: [spark] Using Paper ServerTickStartEvent for tick monitoring
+[16:35:06] [Server thread/INFO]: [spark] Starting background profiler...
+[16:35:07] [Server thread/INFO]: [Pl3xMap] Enabling Pl3xMap v1.20.1-469
+[16:35:08] [Server thread/INFO]: [Pl3xMap] [INFO] Internal webserver running on 0.0.0.0:8080
+[16:35:08] [Server thread/INFO]: [Pl3xMap] [INFO] Platform: purpur
+[16:35:08] [Server thread/INFO]: [Pl3xMap] [INFO] Version: 1.20.1-469
+[16:35:08] [Server thread/INFO]: [CraftBook] Enabling CraftBook v3.10.9;4793-1ce0146
+[16:35:08] [Server thread/INFO]: [CraftBook] Loading persistent data from YAML!
+[16:35:08] [Server thread/INFO]: [CoreProtect] Enabling CoreProtect v22.0
+[16:35:08] [Server thread/INFO]: [CoreProtect] CoreProtect has been successfully enabled! 
+[16:35:08] [Server thread/INFO]: [CoreProtect] Using SQLite for data storage.
+[16:35:08] [Server thread/INFO]: --------------------
+[16:35:08] [Server thread/INFO]: [CoreProtect] Enjoy CoreProtect? Join our Discord!
+[16:35:08] [Server thread/INFO]: [CoreProtect] Discord: www.coreprotect.net/discord/
+[16:35:08] [Server thread/INFO]: --------------------
+[16:35:08] [Server thread/INFO]: [Geyser-Spigot] Enabling Geyser-Spigot v2.2.0-SNAPSHOT
+[16:35:08] [Server thread/INFO]: [Essentials] Enabling Essentials v2.20.1
+[16:35:09] [Server thread/INFO]: [Essentials] Attempting to convert old kits in config.yml to new kits.yml
+[16:35:09] [Server thread/INFO]: [Essentials] No kits found to migrate.
+[16:35:09] [Server thread/INFO]: [Essentials] Starting Essentials ban format conversion
+[16:35:09] [Server thread/INFO]: [Essentials] Attempting to migrate ignore list to UUIDs
+[16:35:09] [Server thread/INFO]: [Essentials] Attempting to migrate legacy userdata keys to Configurate
+[16:35:09] [Server thread/INFO]: [Essentials] Loaded 39094 items from items.json.
+[16:35:09] [Server thread/INFO]: [Essentials] Using locale en_US
+[16:35:09] [Server thread/INFO]: [Essentials] ServerListPingEvent: Spigot iterator API
+[16:35:09] [Server thread/INFO]: [Essentials] Starting Metrics. Opt-out using the global bStats config.
+[16:35:09] [Server thread/WARN]: [Essentials] Detected supported permissions plugin LuckPerms without Vault installed.
+[16:35:09] [Server thread/WARN]: [Essentials] Features such as chat prefixes/suffixes and group-related functionality will not work until you install Vault.
+[16:35:09] [Server thread/INFO]: [Essentials] Using superperms-based permissions.
+[16:35:09] [Server thread/INFO]: [Geyser-Spigot] ******************************************
+[16:35:09] [Server thread/INFO]: [Geyser-Spigot] 
+[16:35:09] [Server thread/INFO]: [Geyser-Spigot] Loading Geyser version 2.2.0-SNAPSHOT (git-master-90c4ea7)
+[16:35:09] [Server thread/INFO]: [Geyser-Spigot] 
+[16:35:09] [Server thread/INFO]: [Geyser-Spigot] ******************************************
+[16:35:10] [Server thread/INFO]: [Geyser-Spigot] Registered 0 custom skulls as custom blocks.
+[16:35:10] [Server thread/INFO]: [Geyser-Spigot] Registered 0 non-vanilla block overrides.
+[16:35:11] [Server thread/INFO]: [Geyser-Spigot] Registered 0 custom block overrides.
+[16:35:11] [Server thread/INFO]: [Geyser-Spigot] Registered 0 custom block item overrides.
+[16:35:11] [Server thread/INFO]: [Geyser-Spigot] Registered 0 custom block extended collision boxes.
+[16:35:11] [Server thread/INFO]: [Geyser-Spigot] Registered 0 custom blocks.
+[16:35:14] [Server thread/INFO]: [Geyser-Spigot] Started Geyser on 0.0.0.0:19132
+[16:35:15] [Server thread/INFO]: [Geyser-Spigot] Done (5.48s)! Run /geyser help for help!
+[16:35:15] [Server thread/INFO]: Running delayed init tasks
+[16:35:15] [Server thread/INFO]: [CoreProtect] WorldEdit logging successfully initialized.
+[16:35:15] [Craft Scheduler Thread - 2 - Essentials/INFO]: [Essentials] Fetching version information...
+[16:35:15] [Server thread/INFO]: Done (22.632s)! For help, type "help"
+[16:35:15] [Server thread/WARN]: [CraftBook] §cWarning! You have no mechanics enabled, the plugin will appear to do nothing until a feature is enabled!
+[16:35:30] [Server thread/INFO]: Stopping the server
+[16:35:30] [Server thread/INFO]: Stopping server
+[16:35:30] [Server thread/INFO]: [Essentials] Disabling Essentials v2.20.1
+[16:35:30] [Server thread/INFO]: [Geyser-Spigot] Disabling Geyser-Spigot v2.2.0-SNAPSHOT
+[16:35:30] [Server thread/INFO]: [Geyser-Spigot] Shutting down Geyser.
+[16:35:30] [Server thread/INFO]: [Geyser-Spigot] Geyser shutdown successfully.
+[16:35:30] [Server thread/INFO]: [CoreProtect] Disabling CoreProtect v22.0
+[16:35:30] [Server thread/INFO]: [CoreProtect] Finishing up data logging. Please wait...
+[16:35:30] [WebSocketConnectReadThread-112/INFO]: [Geyser-Spigot] The skin uploader has been closed
+[16:35:31] [Server thread/INFO]: [CoreProtect] Success! Disabled CoreProtect v22.0
+[16:35:31] [Server thread/INFO]: [CraftBook] Disabling CraftBook v3.10.9;4793-1ce0146
+[16:35:31] [Server thread/INFO]: [CraftBook] Saving persistent data to YAML!
+[16:35:31] [Server thread/INFO]: [Pl3xMap] Disabling Pl3xMap v1.20.1-469
+[16:35:31] [Server thread/INFO]: [Pl3xMap] [INFO] Internal webserver stopped
+[16:35:31] [Server thread/INFO]: [spark] Disabling spark v1.10.47
+[16:35:31] [Server thread/INFO]: [LuckPerms] Disabling LuckPerms v5.4.102
+[16:35:31] [Server thread/INFO]: [LuckPerms] Starting shutdown process...
+[16:35:31] [Server thread/INFO]: [LuckPerms] Closing storage...
+[16:35:31] [Server thread/INFO]: [LuckPerms] Goodbye!
+[16:35:31] [Server thread/INFO]: [floodgate] Disabling floodgate v2.2.2-SNAPSHOT (b69-492be77)
+[16:35:31] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.2.15+6463-5ca4dff
+[16:35:31] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[16:35:31] [Server thread/INFO]: Saving players
+[16:35:31] [Server thread/INFO]: Saving worlds
+[16:35:31] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[16:35:31] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[16:35:31] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[16:35:31] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[16:35:32] [Server thread/INFO]: [ChunkHolderManager] Saved 1681 block chunks, 1 entity chunks, 0 poi chunks in world 'world' in 1.43s
+[16:35:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[16:35:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[16:35:32] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[16:35:32] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[16:35:32] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[16:35:33] [Server thread/INFO]: [ChunkHolderManager] Saved 2025 block chunks, 398 entity chunks, 0 poi chunks in world 'world_nether' in 1.03s
+[16:35:33] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[16:35:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[16:35:33] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[16:35:33] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[16:35:33] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[16:35:34] [Server thread/INFO]: [ChunkHolderManager] Saved 2025 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0.31s
+[16:35:34] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[16:35:34] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[16:35:34] [Server thread/INFO]: Flushing Chunk IO
+[16:35:34] [Server thread/INFO]: Closing Thread Pool
+[16:35:34] [Server thread/INFO]: Closing Server
