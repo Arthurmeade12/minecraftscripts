@@ -5,6 +5,7 @@ MC_DIR="$(dirname "$(dirname "$(readlink -f "${0}")")")" # Evaluates to the pare
 MC_CONFIG="${MC_DIR}"/config # Folder for config.
 TMUX_SESSION='CENTER' # Name of tmux session.
 JAVAVERSION=17 # Which version of Java to look for.
+# Currently JAVAVERSION does nothing.
 MINMEMORY=8192 # See next comment
 MAXMEMORY=8192 # Min and max memory to allocate to server in megabytes. Recommended to be the same.
 MINECRAFTVERSION=1.20.1 # Affects updating.

@@ -27,7 +27,7 @@ no_tmux_error(){
 pushd_noerror "${MC_DIR}"
 JAR="$(find "${MC_DIR}" -maxdepth 1 -name "*.jar")"
 #unset DISPLAY # Problems with X11 trying to set display
-EXEC=('bash' '-c' "exec -a Minecraft_Server archlinux-java-run --max ${MAXJAVA} --min ${MINJAVA} -- ${JAVAOPTS} ${JAR} ${OPTS}")
+EXEC=('bash' '-c' "exec -a Minecraft_Server java ${JAVAOPTS} ${JAR} ${OPTS}")
 export JAR EXEC
 [[ "$(whoami)" != 'minecraft' ]] && abort "Must be run as 'minecraft' user" && exit 1
 case "${#}" in
