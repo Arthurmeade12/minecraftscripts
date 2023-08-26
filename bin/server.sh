@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 set -Bboum pipefail
 source "$(dirname "${0}")"/source.sh
 export TMUX=('tmux' '-S' "/tmp/tmux-$(id -u)/default")
@@ -27,7 +28,7 @@ no_tmux_error(){
 pushd_noerror "${MC_DIR}"
 JAR="$(find "${MC_DIR}" -maxdepth 1 -name "*.jar")"
 #unset DISPLAY # Problems with X11 trying to set display
-EXEC=('bash' '-c' "exec -a Minecraft_Server java ${JAVAOPTS} ${JAR} ${OPTS}")
+EXEC="java ${JAVAOPTS} ${JAR} ${OPTS}"
 export JAR EXEC
 [[ "$(whoami)" != 'minecraft' ]] && abort "Must be run as 'minecraft' user" && exit 1
 case "${#}" in
@@ -41,8 +42,9 @@ case "${1}" in
 'start')
     if ! has_tmux
     then
-	    ${TMUX[*]} -dDn 'Trash' -s "${TMUX_SESSION}"
-        export KILLW='true'
+	    ${TMUX[*]} new -dn 'Trash' -s "${TMUX_SESSION}"
+        #export KILLW='true'
+        export KILLW='false'
     else
 	   export KILLW='false'
     fi
@@ -50,7 +52,7 @@ case "${1}" in
     then
 	   out "Server is already running."
     else
-	   ${TMUX[*]} neww -dPn 'Minecraft' -c "${MC_DIR}" -t "${TMUX_SESSION}" "${EXEC[*]}"
+	   ${TMUX[*]} neww -dPn 'Minecraft' -c "${MC_DIR}" -t "${TMUX_SESSION}" bash -c "exec -a Minecraft_Server ${EXEC}"
 	   [[ "${KILLW}" = 'true' ]] && \
             ${TMUX[*]} killw -t "${TMUX_SESSION}":'Trash'
         out "Started the Minecraft Server!"
