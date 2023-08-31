@@ -141,6 +141,9 @@ entities:
       wither-skeleton: true
     spiders-immune-to-poison-effect: true
     undead-immune-to-certain-effects: true
+  sniffer:
+    boosted-hatch-time: default
+    hatch-time: default
   spawning:
     all-chunks-are-slime-chunks: false
     alt-item-despawn-rate:
@@ -172,7 +175,7 @@ entities:
         twisting_vines: 300
         weeping_vines: 300
     count-all-mobs-for-spawning: false
-    creative-arrow-despawn-rate: 20
+    creative-arrow-despawn-rate: '20'
     despawn-ranges:
       ambient:
         hard: 56
@@ -211,7 +214,7 @@ entities:
     - SleepingZ
     iron-golems-can-spawn-in-air: false
     monster-spawn-max-light-level: -1
-    non-player-arrow-despawn-rate: 20
+    non-player-arrow-despawn-rate: '20'
     per-player-mob-spawns: true
     scan-for-legacy-ender-dragon: true
     skeleton-horse-thunder-spawn-chance: 0.05

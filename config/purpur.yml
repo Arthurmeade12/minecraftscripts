@@ -143,7 +143,7 @@ settings:
     suppress-setblock-in-far-chunk-errors: false
     suppress-library-loader: false
   network:
-    upnp-port-forwarding: true
+    upnp-port-forwarding: false
     max-joins-per-second: false
     kick-for-out-of-order-chat: true
   username-valid-characters: ^[a-zA-Z0-9_.]*$
@@ -991,7 +991,7 @@ world-settings:
           per-attempt:
             min: 1
             max: -1
-        burn-in-light: 0        
+        burn-in-light: 0
         burn-in-daylight: true
         ignore-players-with-torch: false
         flames-on-swoop: true
@@ -1001,12 +1001,12 @@ world-settings:
           min: 0
           max: 0
       pig:
+        give-saddle-back: false
         ridable: false
         ridable-in-water: false
         controllable: true
         attributes:
           max_health: 10.0
-        give-saddle-back: 
         breeding-delay-ticks: 6000
         takes-damage-from-water: false
         always-drop-exp: false
@@ -1045,7 +1045,7 @@ world-settings:
         controllable: false
         attributes:
           max_health: 30.0
-        breedable-item: 'SALMON'
+        breedable-item: ''
         breeding-delay-ticks: 6000
         takes-damage-from-water: false
         always-drop-exp: false
