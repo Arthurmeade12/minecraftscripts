@@ -16,10 +16,10 @@ border-options:
   visualizer-color: 20A0FF
 map-options:
   enable:
-    bluemap: true
-    dynmap: true
+    bluemap: false
+    dynmap: false
     pl3xmap: true
-    squaremap: true
+    squaremap: false
   label: World Border
   hide-by-default: false
   color: FF0000
