@@ -35,12 +35,12 @@ collisions:
   send-full-pos-for-hard-colliding-entities: true
 commands:
   fix-target-selector-tag-completion: true
-  suggest-player-names-when-null-tab-completions: true
+  suggest-player-names-when-null-tab-completions: false
   time-command-affects-all-worlds: false
 console:
   enable-brigadier-completions: true
   enable-brigadier-highlighting: true
-  has-all-permissions: false
+  has-all-permissions: true
 item-validation:
   book:
     author: 8192
@@ -70,10 +70,10 @@ misc:
     chat-executor-max-size: -1
   fix-entity-position-desync: true
   load-permissions-yml-before-plugins: true
-  max-joins-per-tick: 5
+  max-joins-per-tick: 3
   region-file-cache-size: 256
   strict-advancement-dimension-check: false
-  use-alternative-luck-formula: false
+  use-alternative-luck-formula: true
   use-dimension-type-for-custom-spawners: false
 packet-limiter:
   all-packets:
@@ -107,14 +107,14 @@ spam-limiter:
   tab-spam-increment: 1
   tab-spam-limit: 500
 timings:
-  enabled: true
+  enabled: false
   hidden-config-entries:
   - database
   - proxies.velocity.secret
   history-interval: 300
   history-length: 3600
-  server-name: Unknown Server
-  server-name-privacy: false
+  server-name: Arthur's Server
+  server-name-privacy: true
   url: https://timings.aikar.co/
   verbose: true
 unsupported-settings:

@@ -23,8 +23,8 @@ advancements:
   - minecraft:story/disabled
 settings:
   timeout-time: 60
-  restart-on-crash: true
-  restart-script: ./start.sh
+  restart-on-crash: false
+  restart-script: ./bin/server.sh headless_start
   save-user-cache-on-stop-only: false
   sample-count: 12
   bungeecord: false
@@ -65,14 +65,14 @@ world-settings:
   default:
     below-zero-generation-in-existing-chunks: true
     merge-radius:
-      item: 2.5
-      exp: 3.0
+      item: 3.5
+      exp: 4.0
     mob-spawn-range: 3
     item-despawn-rate: 6000
     arrow-despawn-rate: 1200
     trident-despawn-rate: 1200
     zombie-aggressive-towards-villager: true
-    nerf-spawner-mobs: false
+    nerf-spawner-mobs: true
     enable-zombie-pigmen-portal-spawns: true
     wither-spawn-sound-radius: 0
     end-portal-sound-radius: 0
@@ -135,7 +135,7 @@ world-settings:
       other: 64
     ticks-per:
       hopper-transfer: 8
-      hopper-check: 1
+      hopper-check: 8
     hopper-amount: 1
     hopper-can-load-chunks: false
     dragon-death-sound-radius: 0

@@ -20,7 +20,7 @@ dab:
   max-tick-freq: 20
   activation-dist-mod: 8
   blacklisted-entities: []
-inactive-goal-selector-throttle: false
+inactive-goal-selector-throttle: true
 # Settings for things that don't belong elsewhere
 misc:
   disable-method-profiler: true
