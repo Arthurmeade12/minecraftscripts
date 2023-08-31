@@ -1,0 +1,148 @@
+:root {
+    --accent-color: #00fb9a;
+    --main-white: #f5f5f5;
+    --main-gray: #373737;
+    --main-light-gray: #969696;
+    --main-background: #282828;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: var(--main-background);
+    color: var(--main-white);
+    justify-content: center;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    padding: 0.5em;
+    color: var(--main-light-gray);
+}
+
+#menu-box {
+    border-radius: 0.5em;
+    background-color: var(--main-gray);
+    display: flex;
+    flex-direction: column;
+    max-width: 730px;
+}
+
+#box-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#box-footer {
+    padding: 1.5em;
+}
+
+#form-panel {
+    flex: 1;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+#preview-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 350px;
+    max-width: 350px;
+    max-height: 350px;
+}
+
+#preview-icon {
+    max-width: 8em;
+    max-height: 8em;
+    align-self: center;
+    justify-self: center;
+    filter: brightness(50%);
+}
+
+#form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#form-inputs .input-row {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    display: flex;
+    flex-direction: column;
+}
+
+#input-code {
+    background-color: transparent;
+    max-width: 10em;
+    border: 0.15em solid var(--main-white);
+    border-radius: 0.3em;
+    padding: 0.2em;
+    color: var(--main-white);
+    font-size: medium;
+    font-family: 'Nunito', sans-serif;
+}
+
+#input-code:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+#upload-button {
+    background-color: transparent;
+    border: 0.15em solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 0.5em;
+    padding: 0.3em 0.5em;
+    margin: 0.3em auto auto;
+    font-size: medium;
+    font-family: 'Nunito', sans-serif;
+}
+
+#upload-button:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    filter: brightness(75%);
+    text-decoration: underline;
+}
+
+#schematic-command:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    background: var(--main-background);
+    padding: 0.1em 0.3em;
+    border-radius: 0.5em;
+}
