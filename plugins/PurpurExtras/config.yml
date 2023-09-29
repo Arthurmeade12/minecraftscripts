@@ -1,0 +1,84 @@
+settings:
+  rideables:
+    mob-needs-to-be-nametagged-to-ride: false
+  block-building-above-nether:
+    height-limit: 128
+    no-permission-message: '<red>Max build height in this world is: <gold><height>'
+    enabled: false
+  chat:
+    send-sleep-percentage-message:
+      player-sleeping: <grey><playername> has fallen asleep. <sleeping> out of <needed>
+        required players in <worldname> are sleeping.
+      skipping-night: <grey>Enough players have slept! Skipping through the night
+        in <worldname>.
+      enabled: false
+    escape-commands: false
+  lightning-transforms-entities:
+    entities:
+      villager: witch
+      pig: zombie_piglin
+    enabled: false
+  gameplay-settings:
+    open-iron-doors-with-hand: false
+    open-iron-trapdoors-with-hand: false
+    respawn-anchor-needs-charges: true
+    spawner-placement-requires-specific-permission: false
+    run-faster-on-paths:
+      speed-multiplier: 0
+      path-blocks:
+      - DIRT_PATH
+    cancel-damage-from-pet-owner: false
+    fall-damage-when-jump-boost-applied: true
+  dye-boss-bars: false
+  shield:
+    damage-reduction: 1.0
+    cooldown: 100
+  smithing-table:
+    tools:
+      iron-to-diamond: false
+      wood-to-stone: false
+      stone-to-iron: false
+  unlock-all-recipes-on-join: false
+  use-notarget-permissions: false
+  items:
+    beehive-lore:
+      bees: '<reset><gray>Bees: <bees>/<maxbees>'
+      honey: '<reset><gray>Honey level: <honey>/<maxhoney>'
+      enabled: false
+  totem:
+    work-on-void-death: false
+  blocks:
+    shift-right-click-for-invisible-item-frames: false
+    chorus-flowers-always-drop: false
+  anvil-splits-minecarts: false
+  anvil-splits-boats: false
+  dispenser:
+    break-blocks:
+      pickaxe: false
+      shovel: false
+      hoe: false
+      axe: false
+      shears: false
+    shears-shear-pumpkin: false
+    puts-discs-in-jukebox: false
+    interact-with-cauldron: false
+  furnace:
+    burn-time:
+      multiplier: 1.0
+      enabled: false
+  anvil-crushes-blocks:
+    blocks:
+      cobblestone: sand
+    enabled: false
+  stonecutter-damage-filter:
+    blacklist:
+    - player
+    enabled: false
+  protect-blocks-with-loot:
+    message: <red>Prevented you from breaking this block because it can regenerate
+      loot. Sneak to break it anyway.
+    allow-breaking-in-sneak: true
+    message-type: CHAT
+    enabled: false
+  grindstone:
+    gives-enchants-back: false

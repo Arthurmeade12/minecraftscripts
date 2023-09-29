@@ -1,2 +1,5 @@
-gh_token
+/gh_token
 **/*.jar
+libraries/
+logs/
+
