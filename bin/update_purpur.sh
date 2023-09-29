@@ -7,9 +7,10 @@ SOURCE=${SOURCE:="$(dirname "${0}")/source.sh"}
 NOHASHUPDATE=${NOHASHUPDATE:='false'} # If true, will download every time if there's an update or not.
 INTOUPDATE=${INTOUPDATE:='true'} # If true, will download updates into the 'update' folder.
 #shellcheck source-path=SCRIPTDIR
-#shellcheck source=config.sh
+#shellcheck source=source.sh
 . "${SOURCE}"
 GH_TOKEN="$(cat "${MC_DIR}"/gh_token)"
+CF_TOKEN="$(cat "${MC_DIR}"/curseforge_token")"
 export GH_TOKEN
 badfile(){
   warn "Download of ${1} failed, or file did not match hash. \nTry manually downloading or restoring file from ~/.local/share/trash/files ."
@@ -90,14 +91,15 @@ mreval(){
     JQCOMMAND=".files[] | select(.filename | startswith(\"${2%'*.jar'}\"))"
   FILE="$(find . -maxdepth 1 -name "${2}" 2>/dev/null)"
   mrdown(){
-    curl -fLX POST --silent "${1}" -H "Content-Type: application/json" --data-binary @- <<DATA
+    curl -fLX POST --silent "${1}" -H 'Content-Type: application/json' --data-binary @- <<DATA
 {
   "loaders": [
       "paper",
       "purpur"
   ],
   "game_versions": [
-    "1.20.1"
+    "1.20.1",
+    "1.20"
   ]
 }
 DATA
@@ -122,6 +124,15 @@ DATA
       badfile "${1}"
     fi
   fi
+}
+curseeval(){
+  cursedown(){
+    curl -fLX GET --silent "${1}" -H 'Content-Type: application/json' -H "x-api-key: ${CF_TOKEN}" --data-binary @- <<DATA
+{
+  "gameVersion": "1.19.4"
+}
+DATA
+  }
 }
 
 if ! nc -zw1 google.com 443 &>/dev/null
