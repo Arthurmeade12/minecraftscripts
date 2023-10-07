@@ -10,7 +10,7 @@ INTOUPDATE=${INTOUPDATE:='true'} # If true, will download updates into the 'upda
 #shellcheck source=source.sh
 . "${SOURCE}"
 GH_TOKEN="$(cat "${MC_DIR}"/gh_token)"
-CF_TOKEN="$(cat "${MC_DIR}"/curseforge_token")"
+#CF_TOKEN="$(cat "${MC_DIR}"/curseforge_token)"
 export GH_TOKEN
 badfile(){
   warn "Download of ${1} failed, or file did not match hash. \nTry manually downloading or restoring file from ~/.local/share/trash/files ."
@@ -125,15 +125,15 @@ DATA
     fi
   fi
 }
-curseeval(){
-  cursedown(){
-    curl -fLX GET --silent "${1}" -H 'Content-Type: application/json' -H "x-api-key: ${CF_TOKEN}" --data-binary @- <<DATA
-{
-  "gameVersion": "1.19.4"
-}
-DATA
-  }
-}
+#curseeval(){
+#  cursedown(){
+#    curl -fLX GET --silent "${1}" -H 'Content-Type: application/json' -H "x-api-key: ${CF_TOKEN}" --data-binary @- <<DATA
+#{
+#  "gameVersion": "1.19.4"
+#}
+#DATA
+#  }
+#}
 
 if ! nc -zw1 google.com 443 &>/dev/null
 then
