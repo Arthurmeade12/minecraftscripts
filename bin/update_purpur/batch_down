@@ -1,0 +1,3 @@
+get -p ./purpur-*.jar
+get -p ./plugins/*.jar ./plugins
+-get -p plugins/update/*.jar ./plugins/update
